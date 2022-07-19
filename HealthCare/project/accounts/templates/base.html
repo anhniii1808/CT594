@@ -1,0 +1,65 @@
+{% load statics %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="{% statics 'image/fav.png' %}" type="image/x-icon">
+    <title>Health Care {% block title %}{% endblock title%}</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link 
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+
+  <body>
+
+  <!-- header section starts  -->
+<div>
+  <header class="header">
+
+    <!-- <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> medcare. </a> -->
+    <div class="logo2">
+
+      <a href="#" class="logo"><img src="{% static 'logo.png' %}" alt="" style="height: 40px; width: 40px;cursor: pointer;">
+        Health Care.</a>
+    </div>
+
+    <nav class="navbar">
+            <a href="#home">Trang chủ</a>
+            <a href="#services">Dịch vụ</a>
+            <a href="#about">Giới thiệu</a>
+            <a href="#doctors">Đội ngũ</a>
+            <a href="#book">Lịch hẹn</a>
+            <a href="#blogs">Bài viết</a>
+    </nav>
+    <nav class="navbar">
+      <a href="{% url 'register' %}">Đăng ký</a>
+      <a href="{% url 'login' %}">Đăng nhập</a>
+      <a href="{% url 'logout' %}" class="dropdown-item">đăng xuất</a>
+    </nav>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+  </header>
+  <div class="alert alert-success my-2">
+    {% block content %} {% endblock content %}
+  </div>
+</div>
+
+</body>
+
+</html>
