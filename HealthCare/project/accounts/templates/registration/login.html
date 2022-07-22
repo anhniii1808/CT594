@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block title %} Login
+{% endblock title %} {% block content %}
+<section class="home" id="home">
+  <div class="image">
+      <img src="../../static/home-img.svg" alt="">
+  </div>
+  <div class="content" style="text-align: center">
+      
+      <form class="form-login" method="POST">
+        {% csrf_token %}
+        <!-- {{form|crispy}} -->
+          <div >
+              <h3 style="text-align: center">Đăng nhập</h3>
+              <p style="text-align: center">Tài khoản chỉ được cấp bởi Admin!</p>
+              <h1>Tên tài khoản:</h1>
+              <input type="text" name="txtuname" placeholder="Nhập vào tên tài khoản" required>
+              <h1>Mật khẩu:</h1>
+              <input type="password" name="txtpsw" placeholder="Nhập vào mật khẩu" required>
+          </div>
+          <button class="btn" style="text-align: center" type="submit"> Đăng nhập <span class="fas fa-sign-in-alt"></span> </button>
+          <a href="{% url 'register' %}" style="display: inline-block; font-size: 2rem; color: var(--light-color); padding: 2rem 1rem;"> Chưa có tài khoản?</a>
+      </form>
+      
+
+
+  </div>
+
+</section>
+{% endblock content %}

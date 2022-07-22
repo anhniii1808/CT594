@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block title %}
+Register {% endblock title %} {% block content %}
+<section class="book" id="book">
+
+  <h1 class="heading"> <span>Đăng ký</span> ngay bây giờ </h1>    
+  <div class="row">
+
+      <div class="image">
+          <img src="../../static/about-img.svg" alt="">
+      </div>
+
+      <form action="#" method="post">
+        {% csrf_token %}
+          <h3>Thông tin của bạn</h3>
+          <input type="text" name="txtuname" placeholder="Tên tài khoản" class="box" required>
+          <input type="password" name="txtpwd" placeholder="Mật khẩu" class="box" required>
+          <input type="password" name="txtpwd2" placeholder="Nhập lại mật khẩu" class="box" required>
+          <input type="text" name="txtname" placeholder="Tên của bạn" class="box" required>
+          <div class="box" style="border: none; accent-color: var(--green);" >
+              <input type="radio" name="txtgioitinh" value="1" checked> Nam
+              <input type="radio" name="txtgioitinh" value="0"> Nữ
+          </div>
+          
+          <input type="number" name="txtphone" placeholder="Số điện thoại" class="box" required>
+          <input type="email" name="txtemail" placeholder="Email của bạn" class="box" required>
+          <input type="date" name="txtdate" class="box" required>
+          <input type="submit" value="Đăng ký" class="btn">
+          <a href="{% url 'login' %}" style="display: inline-block; font-size: 2rem; color: var(--light-color); padding: 2rem 1rem;"> Đã có tài khoản?</a>
+      </form>
+
+  </div>
+
+</section>
+{% endblock content %}
